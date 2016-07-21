@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'rspec-activemodel-mocks'
 end
 
 group :test do
