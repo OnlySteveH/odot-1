@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem "minitest"
 
 
 group :development, :test do
@@ -22,5 +22,5 @@ end
 group :test do
   gem 'capybara', '~> 2.7', '>= 2.7.1'
   gem 'shoulda-matchers', '2.4.0'
-  gem "minitest"
+
 end
