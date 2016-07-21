@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20160721095732) do
 
   create_table "todo_lists", force: :cascade do |t|
     t.string   "title"
-    t.text     "descrition"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
