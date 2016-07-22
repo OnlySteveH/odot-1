@@ -32,7 +32,7 @@ div.flash.notice{
   color: blue;
 }
 
-/*.clear { clear: both; }
+.clear { clear: both; }
 
 div.nav {
   border-bottom: 1px solid #aaa;
@@ -70,4 +70,4 @@ div.nav ul li a {
 div.nav ul li a:hover {
   background: #aaa;
   color: #eee;
-}*/
+}
