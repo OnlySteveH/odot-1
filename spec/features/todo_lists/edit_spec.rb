@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'rspec/active_model/mocks'
 
 describe "Editing todo list" do
