@@ -20,7 +20,7 @@ describe TodoList do
 
   describe "#has_incomplte_items?" do
 
-    l et(:todo_list) { TodoList.create(title: "Groceries", description:"Grocery list")}
+    let(:todo_list) { TodoList.create(title: "Groceries", description:"Grocery list")}
 
     it "returns true with incompleted todo list items" do
       todo_list.todo_items.create(content:"Eggs")
