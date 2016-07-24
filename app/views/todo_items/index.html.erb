@@ -4,9 +4,15 @@
   <% @todo_list.todo_items.each do |todo_item| %>
     <tr id="<%=dom_id(todo_item)%>">
       <td>
+        <%= todo_item.completed_at %>
+      </td>
+      <td>
         <%= todo_item.content %>
       </td>
       <td>
+        <% if todo_item.completed_at.blank? %>
+        <%= link_to "Mark Complete", complete_todo_list_todo_item_path(todo_item), method: :patch %>
+        <% end%>
         <%= link_to "Edit", edit_todo_list_todo_item_path(todo_item) %>
       </td>
       <td>
