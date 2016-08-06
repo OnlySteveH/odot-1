@@ -5,7 +5,9 @@ describe User do
     {
       first_name: "Jason",
       last_name:  "Seifer",
-      email:      "jason@teamtreehouse.com"
+      email:      "jason@teamtreehouse.com",
+      password:   "treehouse1234",
+      password_confirmation:  "treehouse1234"
     }
   }
 
@@ -15,6 +17,7 @@ describe User do
     before do
       User.create(valid_attributes)
     end
+
     it 'requires an email' do
       expect(user).to validate_presence_of(:email)
     end
@@ -26,8 +29,13 @@ describe User do
     it "requires a unique email (case insensitive)" do
       user.email = "JASON@TEAMTREEHOUSE.COM"
       expect(user).to validate_uniqueness_of(:email)
-
     end
+
+    it "requires the email address to look like an email address" do
+      user.email = "jason"
+      expect(user).to_not be_valid
+    end
+
 
 
   end
