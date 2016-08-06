@@ -24,11 +24,11 @@ RSpec.describe UsersController, type: :controller do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {{
-      "first_name"            =>"MyString",
-      "last_name"             =>"LastName",
-      "email"                 =>"Email@example.com",
-      "password"              =>"password12345",
-      "password_confirmation" =>"password12345"
+      first_name:           "MyString",
+      last_name:            "LastName",
+      email:                "Email@example.com",
+      password:             "password12345",
+      password_confirmation: "password12345"
     }}
 
 
@@ -39,7 +39,9 @@ RSpec.describe UsersController, type: :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { 
+      skip("Add a hash of attributes invalid for your model")
+    }
 
   describe "GET #new" do
     it "assigns a new user as @user" do

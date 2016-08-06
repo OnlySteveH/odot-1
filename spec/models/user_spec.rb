@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 describe User do
   let(:valid_attributes){
     {
@@ -35,9 +36,6 @@ describe User do
       user.email = "jason"
       expect(user).to_not be_valid
     end
-
-
-
   end
 
   describe"#downcase_email" do
