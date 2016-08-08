@@ -44,8 +44,8 @@ RSpec.describe UsersController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) {
-    { "email" => "jason@teamtreehouse.com",
-      "password" =>  "password12345"}
+    { email:        "jason@teamtreehouse.com",
+      password:     "password12345"}
   }
 
   describe "GET #new" do
@@ -83,8 +83,8 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it "sets the session user_id to the created user" do
-        post :create, { user_id: valid_attributes }, valid_session
-        expect (valid_session[:user_id]).to eq(User.find_by(email: valid_attributes["email"]).id)
+        post :create,{ user: valid_attributes }, valid_session
+        expect(session[:user_id]).to eq(User.find_by(email: valid_attributes[:email]).id)
       end
     end
 
@@ -103,13 +103,15 @@ RSpec.describe UsersController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {{
+      let(:new_attributes) {
+        {
         first_name:           "John",
         last_name:            "Doe",
         email:                "john@teamtreehouse.com",
         password:             "password678",
         password_confirmation: "password678"
-      }}
+      }
+    }
 
       it "updates the requested user" do
         user = User.create! valid_attributes
