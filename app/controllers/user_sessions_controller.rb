@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+
   def new
   end
 
@@ -9,8 +10,8 @@ class UserSessionsController < ApplicationController
       flash[:success]= "Thanks for logging in!"
       redirect_to todo_lists_path
     else
-      render :new
       flash[:error]= "Please check your email and password!"
+      render :new
     end
   end
 end

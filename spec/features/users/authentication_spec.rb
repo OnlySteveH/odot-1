@@ -2,8 +2,9 @@ require 'rails_helper'
 require 'rspec/active_model/mocks'
 
 describe "Logging In" do
+  let!(:user){ User.create(first_name: "Jason", last_name: "Seifer", email: "jason@teamtreehouse.com", password:"password12345", password_confirmation:"password12345")
+}
   it "logs the user and goes to the todo list" do
-    User.create(first_name: "Jason", last_name: "Seifer", email: "jason@teamtreehouse.com", password:"password12345", password_confirmation:"password12345")
     visit new_user_session_path
     fill_in "Email Address", with: "jason@teamtreehouse.com"
     fill_in "Password", with: "password12345"
@@ -19,8 +20,8 @@ describe "Logging In" do
     fill_in "Password", with: "wrongpassword"
     click_button "Log In"
 
-    expect(page).to have_field("Email Address", with: "jason@teamtreehouse.com")
     expect(page).to have_content("Please check your email and password!")
+    expect(page).to have_field("Email Address", with: "jason@teamtreehouse.com")
 
   end
 end

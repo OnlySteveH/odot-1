@@ -39,14 +39,14 @@ RSpec.describe UserSessionsController, type: :controller do
         post :create, email: "jason@teamtreehouse.com", password: "password12345"
       end
 
-      it " sets the user_id in the session" do
+      it "sets the user_id in the session" do
         post :create, email: "jason@teamtreehouse.com", password: "password12345"
         expect(session[:user_id]).to eq(user.id)
       end
 
       it "sets the flash success message" do
         post :create, email: "jason@teamtreehouse.com", password: "password12345"
-        expect(flash[:success]).to eq("Thanks for logging!")
+        expect(flash[:success]).to eq("Thanks for logging in!")
       end
     end
 
