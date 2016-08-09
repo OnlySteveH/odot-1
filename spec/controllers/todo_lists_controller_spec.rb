@@ -9,15 +9,21 @@ describe TodoListsController do
 
 
   let(:valid_session) { {} }
+  before do
+    sign_in(build_stubbed(:user))
+  end
 
   describe "GET index" do
 
-    it "assigns all todo_lists as @todo_lists" do
-      todo_list = TodoList.create! valid_attributes
-      allow(controller).to receive(:require_user).and_return(true)
-      get :index, {}, valid_session
-      assigns(:todo_lists).should eq([todo_list])
+
+    context "logged in" do
+      it "assigns all todo_lists as @todo_lists" do
+        todo_list = TodoList.create! valid_attributes
+        get :index, {}, valid_session
+        assigns(:todo_lists).should eq([todo_list])
+      end
     end
+
   end
 
   describe "GET show" do

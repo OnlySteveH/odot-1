@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'bcrypt'
 gem 'rails', '4.2.6'
 gem 'sqlite3'
@@ -10,10 +11,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "minitest"
+gem 'sprockets', '3.7.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   gem 'rspec-activemodel-mocks'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :test do

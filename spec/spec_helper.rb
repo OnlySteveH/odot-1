@@ -6,6 +6,9 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f}
 RSpec.configure do |config|
   config.include TodoListHelpers, type: :feature
   config.include RailsDomIdHelper, type: :feature
+  config.include FactoryGirl::Syntax::Methods
+  config.include AuthenticationHelpers::Controller,type: :controller
+  config.include AuthenticationHelpers::Feature,type: :feature
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
