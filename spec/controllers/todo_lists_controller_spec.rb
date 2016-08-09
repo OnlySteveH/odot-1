@@ -9,8 +9,9 @@ describe TodoListsController do
 
 
   let(:valid_session) { {} }
+
   before do
-    sign_in(build_stubbed(:user))
+    allow(controller).to receive(:current_user).and_return(User.new)
   end
 
   describe "GET index" do
