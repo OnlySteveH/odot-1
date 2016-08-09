@@ -1,6 +1,9 @@
+require 'rails_helper'
 require 'rspec/active_model/mocks'
+require 'database_cleaner'
 
 describe "Editing todo list" do
+  let(:user){ create(:user) }
   let!(:todo_list) {TodoList.create(title: "Groceries", description: "Grocery list.")}
 
   def update_todo_list(options={})
@@ -14,10 +17,15 @@ describe "Editing todo list" do
       click_link "Edit"
     end
 
-      fill_in "Title", with: options[:title]
-      fill_in "Description", with: options[:description]
-      click_button "Update Todo list"
+    fill_in "Title", with: options[:title]
+    fill_in "Description", with: options[:description]
+    click_button "Update Todo list"
   end
+
+  before do
+    sign_in user, password: "treehouse1"
+  end
+
 
   it "updates a todo list successfully with correct information " do
 

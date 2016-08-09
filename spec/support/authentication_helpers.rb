@@ -8,7 +8,6 @@ module AuthenticationHelpers
   end
 
   module Feature
-
     def sign_in(user, options={})
       visit"/login"
       fill_in "Email", with: user.email

@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'rspec/active_model/mocks'
+require 'database_cleaner'
 
 describe "Adding todo items" do
 
@@ -10,7 +11,7 @@ describe "Adding todo items" do
     click_link "New Todo Item"
     fill_in "Content", with: "Milk"
     click_button "Save"
-    
+
     expect(page).to have_content("Added todo list item")
 
     within("table.todo_items") do
@@ -36,11 +37,11 @@ describe "Adding todo items" do
     click_link "New Todo Item"
     fill_in "Content", with: "1"
     click_button "Save"
-    
+
     within("div.flash") do
       expect(page).to have_content("There was an error")
     end
-    
+
     expect(page).to have_content("Content is too short")
   end
 end

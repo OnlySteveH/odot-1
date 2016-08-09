@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'rspec/active_model/mocks'
+require 'database_cleaner'
 
 describe "Logging In" do
   let!(:user){ User.create(first_name: "Jason", last_name: "Seifer", email: "jason@teamtreehouse.com", password:"password12345", password_confirmation:"password12345")

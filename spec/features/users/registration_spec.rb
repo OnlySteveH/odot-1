@@ -1,5 +1,7 @@
 require 'rails_helper'
 require 'rspec/active_model/mocks'
+require 'database_cleaner'
+
 
 describe "Signing up " do
   it "allows a user to sign up for the site and create object in the database" do

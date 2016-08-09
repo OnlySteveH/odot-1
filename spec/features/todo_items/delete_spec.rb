@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'rspec/active_model/mocks'
+require 'database_cleaner'
 
 describe "Deleting todo items" do
 
