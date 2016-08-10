@@ -1,7 +1,14 @@
+require 'rails_helper'
 require 'rspec/active_model/mocks'
 
-describe "Deleting todo list" do
-  let!(:todo_list) {todo_list = TodoList.create(title: "Groceries", description: "Grocery list.")}
+
+describe "Deleting todo lists" do
+  let(:user) { todo_list.user }
+  let!(:todo_list) { create(:todo_list) }
+
+  before do
+    sign_in user, password: "treehouse1"
+  end
 
   it "is successful when clicking the destroy link" do
     visit "/todo_lists"

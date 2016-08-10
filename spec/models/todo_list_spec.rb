@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 describe TodoList do
-  it { should have_many(:todo_items) }
+  
+  context "relationships" do
+    it { should have_many(:todo_items) }
+    it { should belong_to(:user)}
+  end
 
   describe "#has_completed_items?" do
 
@@ -9,7 +13,7 @@ describe TodoList do
 
     it "returns true with completed todo list items" do
       todo_list.todo_items.create(content:"Eggs", completed_at: 1.minute.ago)
-      expect(todo_list.has_completed_items?).to be_truthy
+      expect(todo_list.has_completed_items?).to be true
     end
 
     it "returns false with completed todo list items" do
@@ -24,7 +28,7 @@ describe TodoList do
 
     it "returns true with incompleted todo list items" do
       todo_list.todo_items.create(content:"Eggs")
-      expect(todo_list.has_incompleted_items?).to be_truthy
+      expect(todo_list.has_incompleted_items?).to be true
     end
 
     it "returns false with incompleted todo list items" do
