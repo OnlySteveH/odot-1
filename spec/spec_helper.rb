@@ -4,6 +4,7 @@ require 'rspec/rails'
 # require 'rspec/autorun'
 require 'capybara/rspec'
 require 'shoulda/matchers'
+require 'capybara/email/rspec'
 
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f}
