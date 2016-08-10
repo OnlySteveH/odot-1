@@ -4,8 +4,9 @@ require 'rspec/active_model/mocks'
 
 describe "Adding todo items" do
 
-  let!(:todo_list) { TodoList.create(title: "Grocery list", description: "Groceries") }
-  let(:user) { create(:user) }
+  let(:user){ todo_list.user }
+  let!(:todo_list) {create(:todo_list)}
+  let!(:todo_item) { todo_list.todo_items.create(content: "Milk") }
   before { sign_in user, password: 'treehouse1' }
 
   it "is successful with valid content" do
