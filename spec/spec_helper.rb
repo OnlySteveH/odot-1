@@ -2,6 +2,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 # require 'rspec/autorun'
 require 'capybara/rspec'
+require 'shoulda/matchers'
 
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f}
@@ -16,7 +17,12 @@ RSpec.configure do |config|
   config.include AuthenticationHelpers::Controller, type: :controller
   config.include AuthenticationHelpers::Feature,type: :feature
 
-
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
 
   # config.expect_with :rspec do |expectations|
   #   expectations.include_chain_clauses_in_custom_matcher_descriptions = true
