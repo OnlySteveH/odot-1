@@ -1,10 +1,10 @@
 require 'rails_helper'
 require 'rspec/active_model/mocks'
-require 'database_cleaner'
+
 
 describe "Deleting todo lists" do
-  let(:user){ create(:user) }
-  let!(:todo_list) { TodoList.create(title: "Groceries", description: "Grocery list.")}
+  let(:user) { create(:user) }
+  let!(:todo_list) { TodoList.create(title: "Groceries", description: "Grocery list.") }
 
   before do
     sign_in user, password: "treehouse1"
