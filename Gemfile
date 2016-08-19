@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "minitest"
 gem 'sprockets', '3.7.0'
+gem 'high_voltage', '~> 3.0.0'
+gem 'bootstrap-sass', '~> 3.3.6'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'

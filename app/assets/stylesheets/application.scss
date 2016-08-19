@@ -11,6 +11,12 @@
  *= require_self
  *= require_tree .
  */
+@import "scaffolds";
+@import "todo_items";
+@import "todo_lists";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 div.alert {
   border: 2px solid #aaa;
   padding: 10px;
