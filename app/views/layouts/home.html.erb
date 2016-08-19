@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Odot</title>
+  <meta name="viewport" content="width=divice-width, initial-scale=1.0" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,14 +11,26 @@
 
 <%= render partial: "layouts/flash" %>
 
-<header>
-  <%= link_to "Sign In", new_user_session_path %>
-  <%= link_to "Sign Up", new_user_path %>
+<header class="row global-header">
+  <div class="small-12 small-centered columns">
+    <%= render partial: 'layouts/header_logged_out' %>
+  </div>
 </header>
 
+<div class="row">
+  <div class="small-12 small-centered columns">
+    <%= yield %>
+  </div>
+</div>
+
+<footer class="row global-footer">
+  <div class="small-12 small-centered columns">
+    <%= link_to "Allready have an account? Sign in", login_path %>
+  </div>
+</footer>
 
 
-<%= yield %>
+
 
 </body>
 </html>

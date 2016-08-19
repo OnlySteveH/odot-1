@@ -13,7 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "minitest"
 gem 'sprockets', '3.7.0'
 gem 'high_voltage', '~> 3.0.0'
-gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'foundation-rails', '~> 5.2.2'
+gem 'font-awesome-rails', '~> 4.1.0.0'
 
 
 group :development, :test do
